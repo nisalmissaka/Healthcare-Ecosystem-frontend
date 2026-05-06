@@ -1,0 +1,44 @@
+.sidebar {
+  width: 250px;
+  background-color: #00b8a9; /* Teal/Cyan Color */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: white;
+  position: fixed; /* Screen එකේ වම් පැත්තේ තියෙන්න */
+}
+
+.logo-section {
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+  filter: brightness(0) invert(1); /* Logo එක සුදු පාට කරගන්න */
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+/* Active වෙලා තියෙන Link එකට වෙනස් පාටක් */
+.nav-item:hover, .nav-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}

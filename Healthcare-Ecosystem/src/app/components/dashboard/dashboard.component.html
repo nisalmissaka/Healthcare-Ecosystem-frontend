@@ -1,0 +1,73 @@
+<div class="dashboard-container">
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="assets/images/logo.jpg" alt="Logo" class="logo">
+    </div>
+
+    <nav class="nav-menu">
+      <a class="nav-item active">
+        <i class="fas fa-home"></i> Dashboard
+      </a>
+      <a class="nav-item">
+        <i class="fas fa-calendar-alt"></i> Booking
+      </a>
+      <a class="nav-item">
+        <i class="fas fa-user-md"></i> Doctor
+      </a>
+      <a class="nav-item">
+        <i class="fas fa-file-alt"></i> Record
+      </a>
+      <a class="nav-item">
+        <i class="fas fa-credit-card"></i> Payment
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="search-box">
+        <i class="fas fa-search"></i> Search
+      </div>
+      <div class="top-actions">
+        <button class="action-btn"><i class="fas fa-bell"></i> Notification</button>
+        <button class="action-btn"><i class="fas fa-user"></i> Profile</button>
+        <button class="action-btn"><i class="fas fa-envelope"></i> Message</button>
+      </div>
+    </header>
+
+    <section class="info-cards">
+      <div class="card blue-card">
+        <div class="card-header">NEXT APPOINTMENT:</div>
+        <div class="card-body">
+          <h3>April 12,</h3>
+          <p>10:00 AM - Dr. Silva</p>
+        </div>
+      </div>
+
+      <div class="card green-card">
+        <div class="card-header">PENDING BILLS: <i class="fas fa-receipt"></i></div>
+        <div class="card-body">
+          <h3>LKR 4,500.00</h3>
+        </div>
+      </div>
+
+      <div class="card red-card">
+        <div class="card-header">NEW REPORTS: <i class="fas fa-file-medical"></i></div>
+        <div class="card-body">
+          <h3>3</h3>
+        </div>
+      </div>
+    </section>
+
+   <section class="chart-section">
+  <div class="chart-container" style="position: relative; height: 40vh; width: 80vw;">
+    <canvas 
+      baseChart 
+      [data]="lineChartData" 
+      [options]="lineChartOptions" 
+      [type]="'line'">
+    </canvas>
+  </div>
+</section>
+  </main>
+</div>

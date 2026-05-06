@@ -1,0 +1,60 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f7f6;
+}
+
+.login-card {
+  width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  background: white;
+}
+
+.card-header-custom {
+  background-color: #333;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.card-body-custom {
+  background: url('../../../assets/images/download.png') no-repeat center center;
+  background-size: cover;
+  height: 450px;
+}
+
+.login-form-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.custom-input {
+  background: #fff !important;
+  border: 2px solid #00aaff !important;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.6) !important;
+  border-color: #00aaff !important;
+}
+
+.btn-login {
+  background-color: #1a634d !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.footer-links a {
+  color: #0066cc;
+  font-weight: bold;
+  text-decoration: none;
+}

@@ -1,0 +1,30 @@
+/* Navbar eke custom style eka */
+.navbar-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Button eke custom style (Tailwind override karanawa nam meka use karanna) */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background-color: #00b8a9; /* Teal Color */
+    color: #ffffff;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #008f85; /* Darker Teal */
+    transform: scale(1.02);
+}
+
+/* Icon size eka podi karanna */
+.nav-btn i {
+    font-size: 16px;
+}
