@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   stats: any;
   isDataLoaded = false;
   isBookingMenuOpen: boolean = false;
+  selectedBooking: string = '';
 
   onBookingClick(): void {
     this.isBookingMenuOpen = !this.isBookingMenuOpen;

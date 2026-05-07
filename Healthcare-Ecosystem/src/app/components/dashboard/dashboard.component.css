@@ -25,13 +25,6 @@
   margin-bottom: 30px;
 }
 
-.logo {
-  width: 80px;
-  background: white;
-  border-radius: 8px;
-  padding: 10px;
-}
-
 .nav-menu {
   display: flex;
   flex-direction: column;
@@ -138,50 +131,59 @@
 
 .chart-container {
   background: white;
-  height: 300px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-
-.chart-container {
-  background: white;
   position: relative;
   height: 300px;
-  width: 100px;
+  width: 100%;
   border-radius: 10px;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .logo {
-  width: 200px;        
-  height: auto;         
+  width: 150px; /* Resize kala */
+  height: auto;
   display: block;
-  margin: 10px auto;    
+  margin: 10px auto;
   border-radius: 8px;
   background: white;
   padding: 5px;
 }
-.doctor-booking-btn {
+
+/* Booking Buttons */
+.doctor-booking-btn.selected {
   background-color: #2b6cb0;
   color: white;
-  border: none;
+  border: 2px solid transparent;
   padding: 10px 20px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
-.bed-booking-btn {
-  background-color: #cbd5e0;
-  color: #4a5568;
-  border: none;
+
+.bed-booking-btn.selected {
+  background-color: #2b6cb0;
+  color: white;
+  border: 2px solid transparent;
   padding: 10px 20px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
+
+/* Selection Highlight */
+.selected {
+  border: 2px solid white !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.02); /* Click karama poddak loku wenna */
+}
+
+.doctor-booking-btn:hover, .bed-booking-btn:hover {
+  opacity: 0.9;
+  border: 2px solid rgba(255,255,255,0.5);
 }

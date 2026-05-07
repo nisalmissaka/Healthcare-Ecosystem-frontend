@@ -30,8 +30,8 @@
       </div>
       <section class="booking-selection" *ngIf="isBookingMenuOpen" style="margin: 20px 0;">
         <div style="display: flex; gap:15px;">
-          <button class="doctor-booking-btn">Doctor Booking</button>
-          <button class="bed-booking-btn">Bed Booking</button>
+          <button class="doctor-booking-btn"[class.selected]="selectedBooking === 'doctor'"(click)="selectedBooking = 'doctor'">Doctor Booking</button>
+          <button class="bed-booking-btn"[class.selected]="selectedBooking ==='bed'"(click)="selectedBooking = 'bed'">Bed Booking</button>
         </div>
       </section>
       <div class="top-actions">
