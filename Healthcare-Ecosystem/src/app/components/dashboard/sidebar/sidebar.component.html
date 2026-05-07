@@ -7,9 +7,9 @@
     <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
       <i class="fas fa-th-large"></i> Dashboard
     </a>
-    <a routerLink="/booking" routerLinkActive="active" class="nav-item">
+   <button class="nav-item booking-btn" (click)="emitBookingEvent()" style="cursor: pointer; background: none; border: none; width: 100%; text-align: left;">
       <i class="fas fa-calendar-alt"></i> Booking
-    </a>
+    </button>
     <a routerLink="/doctor" routerLinkActive="active" class="nav-item">
       <i class="fas fa-stethoscope"></i> Doctor
     </a>

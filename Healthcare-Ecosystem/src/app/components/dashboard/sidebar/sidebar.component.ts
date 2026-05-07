@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  standalone:true,
+  imports: [RouterModule,CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
 })
-export class Sidebar {
+export class SidebarComponent {
+  @Output() bookingClicked = new EventEmitter<void>();
+  emitBookingEvent(): void{
+    this.bookingClicked.emit();
+  }
 
 }
