@@ -22,7 +22,6 @@
       </a>
     </nav>
   </aside>
-
   <main class="main-content">
     <header class="top-bar">
       <div class="search-box">
@@ -34,6 +33,10 @@
           <button class="bed-booking-btn"[class.selected]="selectedBooking ==='bed'"(click)="selectedBooking = 'bed'">Bed Booking</button>
         </div>
       </section>
+      <div *ngIf="selectedBooking ===''">
+        <section class="info-cards"></section>
+        <section class="chart-section"></section>
+      </div>
       <div class="top-actions">
         <button class="action-btn"><i class="fas fa-bell"></i> Notification</button>
         <button class="action-btn"><i class="fas fa-user"></i> Profile</button>
@@ -64,7 +67,7 @@
         </div>
       </div>
     </section>
-
+    <app-doctor-booking *ngIf="selectedBooking === 'doctor'"></app-doctor-booking>
    <section class="chart-section">
   <div class="chart-container" style="position: relative; height: 40vh; width: 80vw;">
     <canvas 

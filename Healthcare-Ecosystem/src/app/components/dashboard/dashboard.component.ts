@@ -4,13 +4,14 @@ import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, Chart, registerables } from 'chart.js';
 import { DashboardService } from './../../services/dashboard.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { DoctorBookingComponent } from '../../doctor-booking/doctor-booking.component';
 
 Chart.register(...registerables);
 
 @Component({
   selector: 'app-dashboard',
   standalone: true, 
-  imports: [CommonModule, BaseChartDirective, SidebarComponent], 
+  imports: [CommonModule, BaseChartDirective, SidebarComponent,DoctorBookingComponent], 
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -25,7 +26,7 @@ export class DashboardComponent implements OnInit {
     console.log('Booking menu status:', this.isBookingMenuOpen);
   }
 
-  // Chart configurations...
+ 
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [{

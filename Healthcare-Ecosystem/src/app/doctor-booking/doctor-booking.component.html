@@ -1,0 +1,39 @@
+<div class="booking-wrapper">
+  <div class="booking-card">
+    <h2 class="title">Booking Your Specialist</h2> <div class="booking-grid"> <div class="date-section">
+        <label>Date :</label>
+        <input type="date" [(ngModel)]="selectedDate" class="date-input">
+      </div>
+
+      <div class="time-section">
+        <h3>Time Slot Picker</h3>
+        
+        <p class="slot-label">Morning</p>
+        <div class="slot-grid">
+          <button *ngFor="let slot of morningSlots"
+                  (click)="selectSlot(slot)"
+                  [class.active]="selectedSlot === slot"
+                  class="slot-btn">
+            {{ slot }}
+          </button>
+        </div>
+
+        <p class="slot-label">Evening</p>
+        <div class="slot-grid">
+          <button *ngFor="let slot of eveningSlots"
+                  (click)="selectSlot(slot)"
+                  [class.active]="selectedSlot === slot" 
+                  class="slot-btn">
+            {{ slot }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button class="submit-btn"
+            (click)="onBookingSubmit()"
+            [disabled]="!selectedSlot">
+      Search Now
+    </button>
+  </div>
+</div>

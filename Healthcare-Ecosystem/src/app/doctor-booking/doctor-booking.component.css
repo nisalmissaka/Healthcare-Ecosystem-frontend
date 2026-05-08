@@ -1,0 +1,42 @@
+.booking-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.booking-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.slot-btn.active {
+  background-color: #083344; 
+  color: white;
+  border-color: #083344;
+}
+
+.slot-btn {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  transition: 0.3s;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 15px;
+  background: #083344;
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
