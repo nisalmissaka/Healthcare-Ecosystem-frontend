@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, Chart, registerables } from 'chart.js';
-
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { DashboardService } from './../../services/dashboard.service';
 import { DoctorBookingComponent } from '../../doctor-booking/doctor-booking.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -16,8 +16,10 @@ Chart.register(...registerables);
     CommonModule,
     BaseChartDirective,
     DoctorBookingComponent,
-    SidebarComponent
-  ],
+    SidebarComponent,
+    RouterLink,
+    RouterOutlet
+],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

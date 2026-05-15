@@ -40,6 +40,7 @@
     </header>
 
     <div class="dashboard-body">
+      <router-outlet></router-outlet>
       <div class="stats-container">
         <div class="stat-card">
           <div class="card-header blue">NEXT APPOINTMENT: <i class="fas fa-calendar-check"></i></div>
@@ -64,7 +65,7 @@
         </div>
       </div>
 
-      <div class="graph-card">
+      <div class="graph-card mt-4">
         <canvas baseChart
                 [data]="lineChartData"
                 [options]="lineChartOptions"

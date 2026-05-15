@@ -1,0 +1,46 @@
+.profile-container {
+  min-height: 80vh;
+}
+
+.profile-card {
+  background: #dcdcdc; 
+  padding: 40px;
+  border-radius: 30px;
+  width: 350px;
+}
+
+.avatar-circle {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 40px;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #000;
+}
+
+.user-title {
+  margin-top: 5px;
+  color: #333;
+}
+
+.edit-btn {
+  background-color: #e1bee7; 
+  border: 1px solid #ce93d8;
+  border-radius: 50px;
+  padding: 10px 30px;
+  width: 100%;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: #d1a3e0;
+}
