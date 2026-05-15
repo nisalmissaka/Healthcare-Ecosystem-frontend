@@ -1,82 +1,76 @@
-<div class="dashboard-container">
+<div class="dashboard-wrapper">
   <aside class="sidebar">
-    <div class="logo-section">
-      <img src="assets/images/logo.jpg" alt="Logo" class="logo">
+    <div class="logo-container">
+      <img src="assets/images/logo.jpg" alt="Logo" class="main-logo">
     </div>
 
     <nav class="nav-menu">
-      <a class="nav-item active">
-        <i class="fas fa-home"></i> Dashboard
-      </a>
-      <a class="nav-item"(click)="onBookingClick()" style="cursor: pointer;">
-        <i class="fas fa-calendar-alt"></i> Booking
-      </a>
-      <a class="nav-item">
-        <i class="fas fa-user-md"></i> Doctor
-      </a>
-      <a class="nav-item">
-        <i class="fas fa-file-alt"></i> Record
-      </a>
-      <a class="nav-item">
-        <i class="fas fa-credit-card"></i> Payment
-      </a>
+      <button class="nav-btn"[class.active]="activeButton === 'Dashboard'"(click)="setActive('Dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+      <button class="nav-btn"[class.active]="activeButton === 'Booking'"(click)="setActive('Booking')"><i class="fas fa-calendar-alt"></i> Booking</button>
+      <button class="nav-btn"[class.active]="activeButton === 'Doctor'"(click)="setActive('Doctor')"><i class="fas fa-stethoscope"></i> Doctor</button>
+      <button class="nav-btn"[class.active]="activeButton === 'Record'"(click)="setActive('Record')"><i class="fas fa-file-medical"></i> Record</button>
+      <button class="nav-btn"[class.active]="activeButton === 'Payment'"(click)="setActive('Payment')"><i class="fas fa-credit-card"></i> Payment</button>
     </nav>
   </aside>
+
   <main class="main-content">
-    <header class="top-bar">
+
+    <header class="top-navbar d-flex justify-content-between align-items-center bg-white shadow-sm px-4 py-3 mb-4">
       <div class="search-box">
-        <i class="fas fa-search"></i> Search
-      </div>
-      <section class="booking-selection" *ngIf="isBookingMenuOpen" style="margin: 20px 0;">
-        <div style="display: flex; gap:15px;">
-          <button class="doctor-booking-btn"[class.selected]="selectedBooking === 'doctor'"(click)="selectedBooking = 'doctor'">Doctor Booking</button>
-          <button class="bed-booking-btn"[class.selected]="selectedBooking ==='bed'"(click)="selectedBooking = 'bed'">Bed Booking</button>
+        <div class="input-group" style="width: 300px;">
+          <input type="text" class="form-control border-0 bg-light" placeholder="Search here...">
+          <span class="input-group-text border-0 bg-light"><i class="fas fa-search text-muted"></i></span>
         </div>
-      </section>
-      <div *ngIf="selectedBooking ===''">
-        <section class="info-cards"></section>
-        <section class="chart-section"></section>
       </div>
-      <div class="top-actions">
-        <button class="action-btn"><i class="fas fa-bell"></i> Notification</button>
-        <button class="action-btn"><i class="fas fa-user"></i> Profile</button>
-        <button class="action-btn"><i class="fas fa-envelope"></i> Message</button>
+
+      <div class="header-icons d-flex align-items-center">
+        <a routerLink="/messages" class="nav-link me-3">
+          <img src="assets/icons/email.png" alt="Email" width="24">
+        </a>
+        
+        <a routerLink="/notifications" class="nav-link me-3 position-relative">
+          <img src="assets/icons/bell.png" alt="Notifications" width="24">
+          <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+        </a>
+
+        <a routerLink="/profile" class="nav-link ms-2">
+          <img src="assets/icons/profile.png" alt="Profile" width="35" class="rounded-circle border border-2 border-primary">
+        </a>
       </div>
     </header>
 
-    <section class="info-cards">
-      <div class="card blue-card">
-        <div class="card-header">NEXT APPOINTMENT:</div>
-        <div class="card-body">
-          <h3>April 12,</h3>
-          <p>10:00 AM - Dr. Silva</p>
+    <div class="dashboard-body">
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="card-header blue">NEXT APPOINTMENT: <i class="fas fa-calendar-check"></i></div>
+          <div class="card-content">
+            <h2>April 12,</h2>
+            <p>10:00 AM - Dr. Silva</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="card-header green">PENDING BILLS: <i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="card-content">
+            <h2>LKR 4,500.00</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="card-header red">NEW REPORTS: <i class="fas fa-file-alt"></i></div>
+          <div class="card-content">
+            <h2>3</h2>
+          </div>
         </div>
       </div>
 
-      <div class="card green-card">
-        <div class="card-header">PENDING BILLS: <i class="fas fa-receipt"></i></div>
-        <div class="card-body">
-          <h3>LKR 4,500.00</h3>
-        </div>
+      <div class="graph-card">
+        <canvas baseChart
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="'line'">
+        </canvas>
       </div>
-
-      <div class="card red-card">
-        <div class="card-header">NEW REPORTS: <i class="fas fa-file-medical"></i></div>
-        <div class="card-body">
-          <h3>3</h3>
-        </div>
-      </div>
-    </section>
-    <app-doctor-booking *ngIf="selectedBooking === 'doctor'"></app-doctor-booking>
-   <section class="chart-section">
-  <div class="chart-container" style="position: relative; height: 40vh; width: 80vw;">
-    <canvas 
-      baseChart 
-      [data]="lineChartData" 
-      [options]="lineChartOptions" 
-      [type]="'line'">
-    </canvas>
-  </div>
-</section>
+    </div>
   </main>
 </div>

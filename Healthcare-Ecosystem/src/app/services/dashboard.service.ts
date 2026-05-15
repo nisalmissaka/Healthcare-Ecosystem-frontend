@@ -6,11 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DashboardService {
- private baseUrl = 'http://localhost:8080/api/v1/dashboard/stats';
+ private doctorUrl = 'http://localhost:8080/api/doctors';
 
-  constructor(private http: HttpClient) { }
+ private statsUrl = 'http://localhost:8080/api/v1/dashboard/stats';
 
-  getSummary(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  http:HttpClient;
+  constructor(http:HttpClient){
+    this.http = http;
+  }
+
+  getDoctors(): Observable<any[]> {
+    return this.http.get<any[]>(this.doctorUrl);
+  }
+    getSummary(): Observable<any>{
+      return this.http.get<any>(this.doctorUrl);
   }
 }

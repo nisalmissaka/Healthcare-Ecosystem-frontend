@@ -1,7 +1,10 @@
 .booking-wrapper {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  align-items: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+  background-color: #f4f7f6;
 }
 
 .booking-card {
@@ -9,6 +12,9 @@
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 95%;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .slot-btn.active {
@@ -30,13 +36,22 @@
   margin-top: 30px;
   width: 100%;
   padding: 15px;
-  background: #083344;
+  background: #2563eb;
   color: white;
+  border: none;
   border-radius: 12px;
   font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:active:not(:disabled){
+  transform: translateY(0);
 }
 
 .submit-btn:disabled {
   background: #ccc;
+  color: #666;
   cursor: not-allowed;
 }

@@ -1,23 +1,62 @@
 <aside class="sidebar">
+
+  <!-- Logo -->
   <div class="logo-section">
-    <img src="assets/logo.png" alt="Logo" class="logo">
+    <img
+      src="assets/images/logo.jpg"
+      alt="Logo"
+      class="logo"
+    />
   </div>
-  
+
+  <!-- Menu -->
   <nav class="nav-menu">
-    <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
-      <i class="fas fa-th-large"></i> Dashboard
+
+    <a
+      class="nav-item"
+      [class.active]="activeItem === 'dashboard'"
+      (click)="onDashboard()"
+    >
+      <i class="fas fa-home"></i>
+      Dashboard
     </a>
-   <button class="nav-item booking-btn" (click)="emitBookingEvent()" style="cursor: pointer; background: none; border: none; width: 100%; text-align: left;">
-      <i class="fas fa-calendar-alt"></i> Booking
-    </button>
-    <a routerLink="/doctor" routerLinkActive="active" class="nav-item">
-      <i class="fas fa-stethoscope"></i> Doctor
+
+    <a
+      class="nav-item"
+      [class.active]="activeItem === 'booking'"
+      (click)="onBooking()"
+    >
+      <i class="fas fa-calendar-alt"></i>
+      Booking
     </a>
-    <a routerLink="/record" routerLinkActive="active" class="nav-item">
-      <i class="fas fa-file-medical"></i> Record
+
+    <a
+      class="nav-item"
+      [class.active]="activeItem === 'doctor'"
+      (click)="onDoctor()"
+    >
+      <i class="fas fa-user-md"></i>
+      Doctor
     </a>
-    <a routerLink="/payment" routerLinkActive="active" class="nav-item">
-      <i class="fas fa-credit-card"></i> Payment
+
+    <a
+      class="nav-item"
+      [class.active]="activeItem === 'record'"
+      (click)="onRecord()"
+    >
+      <i class="fas fa-file-medical"></i>
+      Record
     </a>
+
+    <a
+      class="nav-item"
+      [class.active]="activeItem === 'payment'"
+      (click)="onPayment()"
+    >
+      <i class="fas fa-credit-card"></i>
+      Payment
+    </a>
+
   </nav>
+
 </aside>

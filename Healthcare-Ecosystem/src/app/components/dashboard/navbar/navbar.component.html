@@ -1,23 +1,64 @@
-<nav class="flex justify-end items-center p-4 bg-white shadow-sm border-b border-gray-100 gap-3">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-3">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand fw-bold text-primary" href="#">
+      Healthcare Dashboard
+    </a>
 
     <button
-        class="flex items-center gap-2 px-5 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-md transition-all font-medium">
-        <i class="fas fa-search"></i> Search
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+    >
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <button
-        class="flex items-center gap-2 px-5 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-md transition-all font-medium">
-        <i class="fas fa-bell"></i> Notification
-    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarContent"
+    >
 
-    <button
-        class="flex items-center gap-2 px-5 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-md transition-all font-medium">
-        <i class="fas fa-user"></i> Profile
-    </button>
+      <ul class="navbar-nav ms-auto align-items-center">
 
-    <button
-        class="flex items-center gap-2 px-5 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-md transition-all font-medium">
-        <i class="fas fa-envelope"></i> Message
-    </button>
+        <li class="nav-item me-3">
+          <a class="nav-link" routerLink="/messages">
+            <img src="./assets/email.png" alt="Message" width="26" height="26">
+          </a>
+        </li>
+
+        <li class="nav-item me-3">
+          <a class="nav-link position-relative" routerLink="/notifications">
+            <img src="./assets/bell.png" alt="Notifications" width="26" height="26">
+          <span class="position-absolute top-2 start-75 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+          </a>
+        </li>
+
+        <li class="nav-item me-4">
+          <a class="nav-link" routerLink="/profile">
+            <img src="./assets/profile.png" alt="Profile" width="32" height="32" class="rounded-circle border">
+          </a>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+        >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Search
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
 
 </nav>
